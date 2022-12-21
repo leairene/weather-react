@@ -7,11 +7,11 @@ export default function Forecast() {
     <div className="Forecast">
       <main>
         <span>
-          <a href="#" id="celsius-symbol">
+          <a href="/" id="celsius-symbol">
             Cº
           </a>
           |
-          <a href="#" id="fahrenheit-symbol">
+          <a href="/" id="fahrenheit-symbol">
             Fº
           </a>
         </span>
