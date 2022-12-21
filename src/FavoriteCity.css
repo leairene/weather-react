@@ -1,0 +1,50 @@
+ul {
+  text-align: center;
+  list-style: none;
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-evenly;
+  max-width: 800px;
+}
+
+li {
+  margin: 30px;
+  padding: 60px 40px;
+  color: white;
+  white-space: nowrap;
+}
+
+.first-city {
+  background-image: url("./media/sydney.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  width: 150px;
+}
+
+.second-city {
+  background-image: url("../media/newyork.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  width: 150px;
+}
+
+.third-city {
+  background-image: url("./media/cannes.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  width: 150px;
+}
+
+.fourth-city {
+  background-image: url("./media/singapore.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  width: 150px;
+}
