@@ -1,7 +1,5 @@
 import React from "react";
-import "./src/SearchBar.css";
-
-import Form from 'react-bootstrap/Form';
+import "./SearchBar.css";
 
 
 export default function SearchBar() {
