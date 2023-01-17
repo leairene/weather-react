@@ -6,15 +6,6 @@ export default function Forecast() {
   return (
     <div className="Forecast">
       <main>
-        <span>
-          <a href="/" id="celsius-symbol">
-            Cº
-          </a>
-          |
-          <a href="/" id="fahrenheit-symbol">
-            Fº
-          </a>
-        </span>
         <div className="row">
           <div className="col-5 forecast-today">
             <h1 id="display-city">Ålesund</h1>

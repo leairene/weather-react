@@ -5,11 +5,13 @@ import SearchBar from "./SearchBar";
 import FavoriteCity from "./FavoriteCity";
 import Source from "./Source";
 import Forecast from "./Forecast";
+import Units from "./Units";
 
 export default function App() {
   return (
     <div className="App">
       <div className="container">
+        <Units />
         <Forecast />
         <SearchBar />
         <FavoriteCity />
