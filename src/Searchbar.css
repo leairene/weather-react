@@ -31,3 +31,7 @@
 .col-3:hover {
   background-color: #efefef;
 }
+
+p {
+  line-height: 0;
+}
