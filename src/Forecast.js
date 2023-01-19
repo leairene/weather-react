@@ -1,5 +1,6 @@
 import React , { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 import "./Forecast.css";
 
@@ -15,7 +16,7 @@ export default function Forecast() {
       feelsLike: response.data.temperature.feels_like,
       wind: response.data.wind.speed,
       name: response.data.city,
-      date: "Saturday 20:02",
+      date: new Date(response.data.time * 1000),
       description: response.data.condition.description,
       iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png`,
     });
@@ -30,7 +31,7 @@ export default function Forecast() {
           <div className="row">
             <div className="col-5 forecast-today">
               <h1>{weatherData.name}</h1>
-              <h4>{weatherData.date}</h4>
+              <h4><FormattedDate Date={weatherData.date} /></h4>
               <div className="currentWeather">
                 <img
                   src={weatherData.iconUrl}
