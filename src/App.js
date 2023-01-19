@@ -4,7 +4,6 @@ import "./App.css";
 import SearchBar from "./SearchBar";
 import FavoriteCity from "./FavoriteCity";
 import Source from "./Source";
-import Forecast from "./Forecast";
 import Units from "./Units";
 
 export default function App() {
@@ -12,11 +11,10 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Units />
-        <Forecast />
         <SearchBar />
         <FavoriteCity />
         <section>
-          <h1 classNameName="headline">Fancy Forecast</h1>
+          <h1 className="headline">Fancy Forecast</h1>
         </section>
         <Source />
       </div>

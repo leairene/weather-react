@@ -1,44 +1,22 @@
-import React , { useState } from "react";
-import axios from "axios";
+import React from "react";
 import FormattedDate from "./FormattedDate";
 
 import "./Forecast.css";
 
-export default function Forecast() {
-  const [weatherData, setWeatherData] = useState({loaded: false});
-  
-  function handleResponse(response) {
-    console.log(response);
-    setWeatherData({
-      loaded: true,
-      temp: response.data.temperature.current,
-      humidity: response.data.temperature.humidity,
-      feelsLike: response.data.temperature.feels_like,
-      wind: response.data.wind.speed,
-      name: response.data.city,
-      date: new Date(response.data.time * 1000),
-      description: response.data.condition.description,
-      iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png`,
-    });
-  }
-
-  
-
-  if (weatherData.loaded) {
-    return (
+export default function Forecast(props) { 
+  return (
       <div className="Forecast">
-        <main>
           <div className="row">
             <div className="col-5 forecast-today">
-              <h1>{weatherData.name}</h1>
-              <h4><FormattedDate Date={weatherData.date} /></h4>
+              <h1>{props.data.cityName}</h1>
+              <h4><FormattedDate Date={props.data.date} /></h4>
               <div className="currentWeather">
                 <img
-                  src={weatherData.iconUrl}
-                  alt={weatherData.description}
+                  src={props.data.iconUrl}
+                  alt={props.data.description}
                 />
                 <span>
-                  <h3>{Math.round(weatherData.temp)}</h3>
+                  <h3>{Math.round(props.data.temp)}</h3>
                   <strong className="unit">°C</strong>
                 </span>
               </div>
@@ -46,19 +24,19 @@ export default function Forecast() {
                 Feels like:
                 <span id="display-feel">
                   {" "}
-                  {Math.round(weatherData.feelsLike)} °C{" "}
+                  {Math.round(props.data.feelsLike)} °C{" "}
                 </span>
               </div>
               <div className="d-flex justify-content-between">
                 Wind:
                 <span id="display-wind">
                   {" "}
-                  {Math.round(weatherData.wind)} m/s
+                  {Math.round(props.data.wind)} m/s
                 </span>
               </div>
               <div className="d-flex justify-content-between">
                 Humidity:
-                <span id="display-humidity"> {weatherData.humidity} %</span>
+                <span id="display-humidity"> {props.data.humidity} %</span>
               </div>
             </div>
             <div className="col-7 forecast-styling">
@@ -99,15 +77,6 @@ export default function Forecast() {
               </div>
             </div>
           </div>
-        </main>
       </div>
     );
-  } else {
-    const apiKey = "9ffb9f94bt43ca48fd62332a60oc4b85";
-    let city = "Ålesund";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-
-    return "loading...";
-  }
 } 
