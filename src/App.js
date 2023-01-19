@@ -11,7 +11,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Units />
-        <SearchBar />
+        <SearchBar defaultCity="Ålesund" />
         <FavoriteCity />
         <section>
           <h1 className="headline">Fancy Forecast</h1>
