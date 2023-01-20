@@ -18,7 +18,7 @@ export default function SearchBar(props) {
       cityName: response.data.city,
       date: new Date(response.data.time * 1000),
       description: response.data.condition.description,
-      iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png`,
+      icon: response.data.condition.icon
     });
   }
 

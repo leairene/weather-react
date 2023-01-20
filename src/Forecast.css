@@ -29,6 +29,7 @@ body {
   font-size: 60px;
   display: inline;
   margin-bottom: 0;
+  margin-left: 5px;
 }
 
 .Forecast .unit {
