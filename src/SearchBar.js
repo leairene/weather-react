@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Forecast from "./Forecast";
+import WeatherForecast from "./WeatherForecast";
 
 import "./Searchbar.css";
 
@@ -40,7 +40,7 @@ export default function SearchBar(props) {
   if (weatherData.loaded) {
     return (
       <div>
-        <Forecast data={weatherData} />
+        <WeatherForecast data={weatherData} />
         <form className="new-city" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-6">
