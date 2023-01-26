@@ -4,13 +4,11 @@ import "./App.css";
 import SearchBar from "./SearchBar";
 import FavoriteCity from "./FavoriteCity";
 import Source from "./Source";
-import Units from "./Units";
 
 export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Units />
         <SearchBar defaultCity="Ålesund" />
         <FavoriteCity />
         <section>

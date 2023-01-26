@@ -8,9 +8,18 @@ export default function WeatherDaily(props) {
     return `${temp}°C`;
   }
 
+  function day() {
+    let date = new Date(props.data.time * 1000);
+    let day = date.getDay();
+
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    return days[day];
+  }
+
   return (
     <div className="forecast-next-day d-flex justify-content-between">
-      <span>{props.data.time}</span>
+      <span>{day()}</span>
       <span>
         {dailyTemp()}
         <WeatherIcon code={props.data.condition.icon} size={20} />
