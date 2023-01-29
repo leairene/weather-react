@@ -58,7 +58,11 @@ export default function WeatherForecast(props) {
           <div className="col-7 forecast-styling">
             {forecast.map(function(dailyForecast, index) {
               if (index < 5) {
-                return ( <WeatherDaily data={dailyForecast} />);
+                return (
+                  <div key={index}>
+                    <WeatherDaily data={dailyForecast} />
+                  </div>
+                );
               } else {
                 return null;
               }
