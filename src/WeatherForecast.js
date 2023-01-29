@@ -55,7 +55,6 @@ export default function WeatherForecast(props) {
               <span id="display-humidity"> {props.data.humidity} %</span>
             </div>
           </div>
-
           <div className="col-7 forecast-styling">
             {forecast.map(function(dailyForecast, index) {
               if (index < 5) {

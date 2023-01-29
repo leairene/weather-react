@@ -48,7 +48,6 @@ export default function SearchBar(props) {
                 type="search"
                 placeholder="Search for a city"
                 className="search-bar"
-                id="city-bar"
                 autocomplete="off"
                 onChange={handleChange}
               />
@@ -62,8 +61,6 @@ export default function SearchBar(props) {
             </div>
           </div>
         </form>
-        <br />
-        <p>or go to...</p>
       </div>
     );
   } else {

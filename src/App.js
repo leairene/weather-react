@@ -2,7 +2,6 @@ import React from "react";
 
 import "./App.css";
 import SearchBar from "./SearchBar";
-import FavoriteCity from "./FavoriteCity";
 import Source from "./Source";
 
 export default function App() {
@@ -10,10 +9,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <SearchBar defaultCity="Ålesund" />
-        <FavoriteCity />
-        <section>
-          <h1 className="headline">Fancy Forecast</h1>
-        </section>
+        <br />
         <Source />
       </div>
       <script
