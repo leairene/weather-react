@@ -22,12 +22,6 @@ export default function SearchBar(props) {
     });
   }
 
-  function search() {
-    const apiKey = "9ffb9f94bt43ca48fd62332a60oc4b85";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -37,13 +31,19 @@ export default function SearchBar(props) {
     setCity(event.target.value);
   }
 
+   function search() {
+     const apiKey = "9ffb9f94bt43ca48fd62332a60oc4b85";
+     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+     axios.get(apiUrl).then(handleResponse);
+   }
+
   if (weatherData.loaded) {
     return (
       <div>
         <WeatherForecast data={weatherData} />
         <form className="new-city" onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-6">
+            <div className="col-9">
               <input
                 type="search"
                 placeholder="Search for a city"
@@ -57,13 +57,6 @@ export default function SearchBar(props) {
               <input
                 type="submit"
                 value="Go!"
-                className="search-button form-control"
-              />
-            </div>
-            <div className="col-3 current-button">
-              <input
-                type="submit"
-                value="Current"
                 className="search-button form-control"
               />
             </div>

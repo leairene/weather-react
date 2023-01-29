@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
@@ -10,6 +10,10 @@ import "./WeatherForecast.css";
 export default function WeatherForecast(props) { 
  let [loaded, setLoaded] = useState(false);
  let [forecast, setForecast] = useState(null);
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.data]);
  
   function handleResponse(response) {
    setForecast(response.data.daily);
@@ -51,8 +55,13 @@ export default function WeatherForecast(props) {
               <span id="display-humidity"> {props.data.humidity} %</span>
             </div>
           </div>
+
           <div className="col-7 forecast-styling">
-            <WeatherDaily data={forecast[0]} />
+            {forecast.map(function(dailyForecast, index) {
+              if (index < 5) {
+                return ( <WeatherDaily data={dailyForecast} />);
+              }
+            })}
           </div>
         </div>
       </div>

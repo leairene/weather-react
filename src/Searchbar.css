@@ -1,5 +1,5 @@
 .search-bar {
-  padding: 10px 100px;
+  padding: 10px 200px;
   margin: 0 auto;
   border-radius: 0;
   border: none;
@@ -24,11 +24,11 @@
   margin: 0 auto;
 }
 
-.col-3 {
+.go-button {
   border-left: 2px solid black;
 }
 
-.col-3:hover {
+.go-button:hover {
   background-color: #efefef;
 }
 
